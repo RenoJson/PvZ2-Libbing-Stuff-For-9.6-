@@ -9,22 +9,13 @@
     <ClCompile Include="Sexy\RtClass.cpp" />
     <ClCompile Include="Sexy\DelegateBase.cpp" />
     <ClCompile Include="PvZ2\StageModule.cpp" />
-    <ClCompile Include="Furr\OverrideSunCollectableModule.cpp" />
     <ClCompile Include="SexyUtils.cpp" />
     <ClCompile Include="PvZ2\Plant_PowerLily.cpp" />
     <ClCompile Include="PvZ2\ZombieType.cpp" />
     <ClCompile Include="PvZ2\Zombie_EightiesArcade.cpp" />
     <ClCompile Include="PvZ2\Zombie_Camel.cpp" />
     <ClCompile Include="PvZ2\Zombie_Bull.cpp" />
-    <ClCompile Include="PvZ2\ZombieRedBoy.cpp" />
-    <ClCompile Include="PvZ2\ZombieRedBoyProps.cpp" />
     <ClCompile Include="PvZ2\Chairracer.cpp" />
-    <ClCompile Include="PvZ2\RoofHook.cpp" />
-    <ClCompile Include="PvZ2\RoofModule.cpp" />
-    <ClCompile Include="PvZ2\RoofModuleProps.cpp" />
-    <ClCompile Include="PvZ2\RoofPlantFixes.cpp" />
-    <ClCompile Include="PvZ2\RoofStage.cpp" />
-    <ClCompile Include="PvZ2\RoofStageProps.cpp" />
     <ClCompile Include="PvZ2\LevelModuleManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +80,6 @@
     <ClInclude Include="PvZ2\StageModule.h" />
     <ClInclude Include="PvZ2\WorldMap.h" />
     <ClInclude Include="PvZ2\Delegate.h" />
-    <ClInclude Include="Furr\OverrideSunCollectableModule.h" />
     <ClInclude Include="SexyUtils.h" />
     <ClInclude Include="PvZ2\Plant_PowerLily.h" />
     <ClInclude Include="PvZ2\ZombieType.h" />
@@ -104,17 +94,9 @@
     <ClInclude Include="PvZ2\AttachedEffectManager.h" />
     <ClInclude Include="PvZ2\Zombie_Camel.h" />
     <ClInclude Include="PvZ2\Zombie_Bull.h" />
-    <ClInclude Include="PvZ2\ZombieRedBoyProps.h" />
-    <ClInclude Include="PvZ2\ZombieRedBoy.h" />
     <ClInclude Include="PvZ2\Bullrider.h" />
     <ClInclude Include="PvZ2\Chairracer.h" />
     <ClInclude Include="Component.h" />
-    <ClInclude Include="PvZ2\RoofHook.h" />
-    <ClInclude Include="PvZ2\RoofModule.h" />
-    <ClInclude Include="PvZ2\RoofModuleProps.h" />
-    <ClInclude Include="PvZ2\RoofPlantFixes.h" />
-    <ClInclude Include="PvZ2\RoofStage.h" />
-    <ClInclude Include="PvZ2\RoofStageProps.h" />
     <ClInclude Include="PvZ2\PacketCursor.h" />
     <ClInclude Include="PvZ2\ZombieParticle.h" />
     <ClInclude Include="PvZ2\Effect_PopAnim.h" />

@@ -17,12 +17,12 @@
 #include "PvZ2/Zombie_EightiesArcade.h"
 #include "PvZ2/Zombie_Camel.h"
 
-#include <Furr/OverrideSunCollectableModule.h>
+
 #include <PvZ2/Zombie_Bull.h>
 #include <PvZ2/ZombieRedBoyProps.h>
 #include <PvZ2/ZombieRedBoy.h>
 #include <PvZ2/Chairracer.h>
-#include <PvZ2/RoofHook.h>
+
 
 
 #pragma region Alias to ID
