@@ -19,8 +19,6 @@
 
 
 #include <PvZ2/Zombie_Bull.h>
-#include <PvZ2/ZombieRedBoyProps.h>
-#include <PvZ2/ZombieRedBoy.h>
 #include <PvZ2/Chairracer.h>
 
 
