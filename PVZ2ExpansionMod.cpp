@@ -236,17 +236,12 @@ void libPVZ2ExpansionMod_main()
     //FluffyHookFunction(0x72C56C, (void*)hkBoardDraw, (void**)&oBoardDraw);
     //FluffyHookFunction(0x949EFC, (void*)hkGetBoard, (void**)&oGetBoard);
 
-    //Furr::OverrideSunCollectableModule::modInit();
-    //Furr::OverrideSunCollectableModuleProps::modInit();
-    //initRoofHooks();
-    //PowerLilyProps::modInit();
+
+    PowerLilyProps::modInit();
     ZombieBullProps::modInit();
     ZombieZcorpRacer::modInit();
-    //ProjectilePropertySheet::modInit();
-    //U46Project::ZombieRedBoyProps::modInit();
-    //U46Project::ZombieRedBoy::modInit();
     //ZombieCamel::modInit();
-    //ZombieEightiesArcadeProps::modInit();
+    ZombieEightiesArcadeProps::modInit();
 
     LOGI("Finished initializing");
 }
