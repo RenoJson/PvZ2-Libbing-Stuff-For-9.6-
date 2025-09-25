@@ -54,6 +54,8 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
         typedef void (*dtor)(Sexy::RtWeakPtr<int>*);
         ((dtor)(getActualOffset(0x10C8B38)))(&zType);
 
+        //Racer zombie have weird landing animation
+        //This bool flag should make the racer have proper landing animation
         *(char*)((uintptr_t)spawnedRider + 0x30D) = true;
 
         if (hasCond((uintptr_t)self, 43) || hasCond((uintptr_t)self, 44)) {
@@ -104,7 +106,7 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
             sub_8A8450(spawnedRider, v12);
 
             // Calculate target position for hypnotized zombie (forward launch)
-            targetX = launchDistance + currentX; // v8 + v15
+            targetX = launchDistance + currentX; 
             if (targetX > 776.0f) {
                 targetX = 776.0f;
             }
@@ -121,7 +123,6 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
         int* vtable2 = *(int**)spawnedRider;
         ZombieThrowVirtual virtualThrow = (ZombieThrowVirtual)(vtable2[0x338 / 4]);
 
-        // Get force parameters from animation rig (v2)
         int forceParam1 = *(int*)(animRig + 0x1B4);
         int forceParam2 = *(int*)(animRig + 0x1B0); 
 
@@ -130,21 +131,6 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
 
         // Mark as launched
         *(bool*)((uintptr_t)self + 0x308) = true; // 776 = 0x308
-    }
-}
-void hkCheckingTypename1(ZombieZcorpRacer* self, int a2)
-{
-    // Checking softcode typename before using hooking function
-    auto* props = reinterpret_cast<ZombieZcorpRacerProps*>(self->m_propertySheet.Get());
-    if (self == 0) {
-        return oZombieChairThrowRacer(self, a2);
-    }
-    std::string name = props->RacerType;
-    if (name == "zcorp_racer") {
-        return oZombieChairThrowRacer(self, a2);
-    }
-    else {
-        return hkZombieChairThrowRacer(self, a2);
     }
 }
 #pragma endregion
