@@ -105,14 +105,14 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
             sub_8A8450_t sub_8A8450 = (sub_8A8450_t)getActualOffset(0x8A8450);
             sub_8A8450(spawnedRider, v12);
 
-            // Calculate target position for hypnotized zombie (forward launch)
+            // Calculate target position for hypnotized zombie 
             targetX = launchDistance + currentX; 
             if (targetX > 776.0f) {
                 targetX = 776.0f;
             }
         }
         else {
-            // Calculate target position for normal zombie (backward launch)  
+            // Calculate target position for normal zombie 
             
             if (targetX < 232.0f) {
                 targetX = 232.0f;
