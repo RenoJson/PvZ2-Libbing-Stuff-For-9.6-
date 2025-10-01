@@ -90,7 +90,7 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
             setHypnoProperty setHypno = (setHypnoProperty)getActualOffset(0x8A7EC8);
             setHypno(spawnedRider, 23, 0x7F7FFFFF, 0, 0);
 
-            // Copy property sheet (sub_CEB640)
+            // Call sub_CEB640
             typedef void (*sub_CEB640_t)(int, int);
             sub_CEB640_t sub_CEB640 = (sub_CEB640_t)getActualOffset(0xCEB640);
             sub_CEB640(spawnedRider, *(int*)((uintptr_t)self + 0x20)); // offset 32 = 0x20
