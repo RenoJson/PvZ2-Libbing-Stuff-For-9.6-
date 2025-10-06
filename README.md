@@ -18,7 +18,9 @@ An expanded library for PvZ2 (9.6.1), based on Brekko's ExampleMod. I want it to
 * Beta softcode for Bull and Chair Racer (unfinished due to broken hypno checking)
 
 # Future Plans
-I'm just doing stuff randomly so idk.
+- Fixing hypno stuff
+- Create new projectile class based from SquidProjectile
+- Port my stuff to 64 bit once there are 64 bit template
 
 # Build Instructions
 Building this repo is the same as building Blazey example mod update. The instructions regarding that [you can find here](https://github.com/BlazeyLol/PVZ2ExampleMod) or [in this old doc](https://docs.google.com/document/d/1egwNqNJjw61MlLYMgzUewdTkztpB-6VruHrSez90gcA/edit?usp=sharing).
