@@ -20,6 +20,7 @@ An expanded library for PvZ2 (9.6.1), based on Brekko's ExampleMod. I want it to
 # Future Plans
 - Fixing hypno stuff
 - Create new projectile class based from SquidProjectile
+- Hooking General Base class to be able to view the health bar
 - Port my stuff to 64 bit once there are 64 bit template
 
 # Build Instructions
