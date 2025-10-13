@@ -37,7 +37,7 @@ Arcade's new property is `GridItemType` (string). One important note: DO NOT use
 - RiderType (string)
 - RiderLayerToHide (string list)
 - LandOffsetX (float)
-- NOTE: The RiderType must use ZombieImp class with BullRiderProps. You can using RiderLayerToHide and LandOffSetX or not as they will use the original one if you don't use them. Update 1/10/2025: This softcode only work on Bull class and props, for the veteran, only using "RiderType": "west_bullrider" to make it work, any softcode for bull veteran could make the game crash.
+- NOTE: The RiderType must use ZombieImp class with BullRiderProps. You can using RiderLayerToHide and LandOffSetX or not as they will use the original one if you don't use them. Update 1/10/2025: This softcode only work on Bull class and props, for the veteran, only using "RiderType": "west_bullrider" to make it work, any softcode for bull veteran could make the game crash.  Update 13/10/2025: I was wrong, must have RiderType and RiderLayerToHide to make the bull (or veteran bull) work
 # ZcorpRacer's (Chair Racer) new property:
 - RacerType (string)
 - NOTE: Beside the RacerType must use ZcorpRacerZombie class, both the chair and racer must have zcorp_racer_chair and zcorp_racer in their typename or the chair is completely frozen sob, also don't use replicate in custom chair racer typename or the game just crash if you enter a level that having them (don't ask me why).
