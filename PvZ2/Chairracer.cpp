@@ -21,7 +21,10 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
     }
 
     typedef bool (*checkZombieHasCondition)(int, int);
-    checkZombieHasCondition hasCond = (checkZombieHasCondition)getActualOffset(0x8A584C);
+    checkZombieHasCondition hasCondition = (checkZombieHasCondition)getActualOffset(0x8A584C);
+
+    typedef void (*setConditionZ)(int, int, int, int, int);
+    setConditionZ setCondition = (setConditionZ)getActualOffset(0x8A7EC8);
 
     if (!*(bool*)((uintptr_t)self + 0x308)) {  // 776 = 0x308 
 
@@ -40,10 +43,6 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
         typedef void (*getZombieType)(Sexy::RtWeakPtr<int>*, int, std::string*);
         Sexy::RtWeakPtr<int> zType;
 
-        if (hasCond((uintptr_t)self, zombie_condition_hypnotized)) {
-           racerType = "hypno_" + racerType;
-        }
-
         ((getZombieType)getActualOffset(0x28107C))(&zType, typeDir, &racerType);
 
         typedef int (*addZombieByType)(int, int, int, char, int);
@@ -54,16 +53,14 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
         typedef void (*dtor)(Sexy::RtWeakPtr<int>*);
         ((dtor)(getActualOffset(0x10C8B38)))(&zType);
 
-        //Racer zombie have weird landing animation
-        //This bool flag should make the racer have proper landing animation
         *(char*)((uintptr_t)spawnedRider + 0x30D) = true;
 
-        if (hasCond((uintptr_t)self, 43) || hasCond((uintptr_t)self, 44)) {
-            typedef void (*setHypnoProperty)(int, int, int, int, int);
-            setHypnoProperty setHypno = (setHypnoProperty)getActualOffset(0x8A7EC8);
-            setHypno(spawnedRider, 44, 0x7F7FFFFF, 0, 0);
+        if (hasCondition((int)self, zombie_condition_shrinking) || hasCondition((int)self, zombie_condition_shrunken)) {
+           
+            setCondition(spawnedRider, zombie_condition_shrunken, 0x7F7FFFFF, 0, 0);
         }
 
+       
         float launchDistance = animValue * 64.0f;
 
         float currentX = *(float*)((uintptr_t)self + 0x14); 
@@ -81,38 +78,22 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
         typedef void (*VirtualFunc244)(int);
         VirtualFunc244 virtualFunc = (VirtualFunc244)(vtable[0xF4 / 4]);
         virtualFunc(spawnedRider);
-        // skip hypno checking for now
-        bool isHypnotized = hasCond((uintptr_t)self, zombie_condition_hypnotized);
 
-        if (isHypnotized) {
-            // Set hypno properties
-            typedef void (*setHypnoProperty)(int, int, int, int, int);
-            setHypnoProperty setHypno = (setHypnoProperty)getActualOffset(0x8A7EC8);
-            setHypno(spawnedRider, 23, 0x7F7FFFFF, 0, 0);
+        if (hasCondition((int)self, zombie_condition_hypnotized)) {
 
-            // Call sub_CEB640
-            typedef void (*sub_CEB640_t)(int, int);
-            sub_CEB640_t sub_CEB640 = (sub_CEB640_t)getActualOffset(0xCEB640);
-            sub_CEB640(spawnedRider, *(int*)((uintptr_t)self + 0x20)); // offset 32 = 0x20
+            setCondition(spawnedRider, zombie_condition_hypnotized, 0x7F7FFFFF, 0, 0);
+            int bullProperty = *(int*)((uintptr_t)self + 0x20);
+            *(int*)((uintptr_t)spawnedRider + 0x20) = bullProperty;
 
-            // Get some value (v12)
-            typedef int (*sub_8A5A8C_t)(int);
-            sub_8A5A8C_t sub_8A5A8C = (sub_8A5A8C_t)getActualOffset(0x8A5A8C);
-            int v12 = sub_8A5A8C((uintptr_t)self);
-
-            // Call sub_8A8450
-            typedef void (*sub_8A8450_t)(int, int);
-            sub_8A8450_t sub_8A8450 = (sub_8A8450_t)getActualOffset(0x8A8450);
-            sub_8A8450(spawnedRider, v12);
-
-            // Calculate target position for hypnotized zombie 
-            targetX = launchDistance + currentX; 
+            // Calculate target position for hypnotized zombie (forward launch)
+            targetX = launchDistance + currentX; // v8 + v15
             if (targetX > 776.0f) {
                 targetX = 776.0f;
             }
         }
+
         else {
-            // Calculate target position for normal zombie 
+            // Calculate target position for normal zombie (backward launch)  
             
             if (targetX < 232.0f) {
                 targetX = 232.0f;
@@ -123,6 +104,7 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
         int* vtable2 = *(int**)spawnedRider;
         ZombieThrowVirtual virtualThrow = (ZombieThrowVirtual)(vtable2[0x338 / 4]);
 
+        // Get force parameters from animation rig (v2)
         int forceParam1 = *(int*)(animRig + 0x1B4);
         int forceParam2 = *(int*)(animRig + 0x1B0); 
 
@@ -133,6 +115,7 @@ void hkZombieChairThrowRacer(ZombieZcorpRacer* self, int a2)
         *(bool*)((uintptr_t)self + 0x308) = true; // 776 = 0x308
     }
 }
+
 #pragma endregion
 
 Reflection::CRefManualSymbolBuilder::BuildSymbolsFunc ZombieZcorpRacerProps::oZombieZcorpRacerPropsBuildSymbols = nullptr;
