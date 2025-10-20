@@ -15,7 +15,7 @@ An expanded library for PvZ2 (9.6.1), based on Brekko's ExampleMod. I want it to
 * Power Lily softcode - Power Lily gained new properties regarding her collectable
 * Arcade Pusher GI softcode
 * Mummy Memory from the original Example Mod
-* Beta softcode for Bull and Chair Racer (unfinished due to broken hypno checking). Update 20/10/2025: Bull hypno checking are finally fixed but new bug that making the game crash when the bull first time being shrunken (it don't make the game crash after that).
+* Beta softcode for Bull and Chair Racer (unfinished due to broken hypno checking). Update 20/10/2025: set zombie in condition function are finally fixed for both bull and chair racer.
 
 # Future Plans
 - Fixing hypno stuff
