@@ -24,7 +24,7 @@ An expanded library for PvZ2 (9.6.1), based on Brekko's ExampleMod. I want it to
 - Port my stuff to 64 bit once there are 64 bit template
 
 # Build Instructions
-Building this repo is the same as building Blazey example mod update. The instructions regarding that [you can find here](https://github.com/BlazeyLol/PVZ2ExampleMod) or [in this old doc](https://docs.google.com/document/d/1egwNqNJjw61MlLYMgzUewdTkztpB-6VruHrSez90gcA/edit?usp=sharing).
+Building this repo is the same as building Blazey example mod update. The instructions regarding that [you can find here](https://github.com/BlazeyLol/PVZ2ExampleMod) and [here](https://github.com/BlazeyLol/PVZ2ExpansionMod) or [in this old doc](https://docs.google.com/document/d/1egwNqNJjw61MlLYMgzUewdTkztpB-6VruHrSez90gcA/edit?usp=sharing).
 This library requires some packages modifications in order to work. You can find example Plant/Zombie types jsons in the Packages directory.
 If you want to utilize Power Lily's custom fields, add these to her props:
 - CollectableType (string)
