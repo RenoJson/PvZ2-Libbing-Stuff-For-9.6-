@@ -91,11 +91,7 @@ void hkZombieBullThrowRider(Zombie* self, int a2)
 
         typedef void (*getZombieType)(Sexy::RtWeakPtr<int>*, int, std::string*);
         Sexy::RtWeakPtr<int> zType;
-
-        //if (hasCond((uintptr_t)self, zombie_condition_hypnotized)) {
-            //name = "hypno_" + name;
-        //}
-
+		
         ((getZombieType)getActualOffset(0x28107C))(&zType, typeDir, &name);
 
         // Spawn the custom rider i guess
@@ -108,14 +104,14 @@ void hkZombieBullThrowRider(Zombie* self, int a2)
         ((dtor)(getActualOffset(0x10C8B38)))(&zType);
 
         *(char*)((uintptr_t)spawnedRider + 0x30D) = true;
-        //skip hypno checked condition for now
-        //if (hasCond((int)self, zombie_condition_hypnotized)) {
-            //typedef void (*setHypnoProperty)(int, int, int, int);
-            //setHypnoProperty setHypno = (setHypnoProperty)getActualOffset(0x8A7EC8);
-            //setHypno(spawnedRider, 0x17, 0x7F7FFFFF, 0);
-            //int bullProperty = *(int*)((uintptr_t)self + 0x20);
-            //*(int*)((uintptr_t)spawnedRider + 0x20) = bullProperty;
-        //}
+		
+        if (hasCondition((int)self, zombie_condition_hypnotized)) {
+		     typedef void (*setHypnoProperty)(int, int, int, int, int);
+		     setHypnoProperty setHypno = (setHypnoProperty)getActualOffset(0x8A7EC8);
+		     setHypno(spawnedRider, zombie_condition_hypnotized, 0x7F7FFFFF, 0, 0);
+		     int bullProperty = *(int*)((uintptr_t)self + 0x20);
+		     *(int*)((uintptr_t)spawnedRider + 0x20) = bullProperty;
+		 }
 
         // Set rider position
 
