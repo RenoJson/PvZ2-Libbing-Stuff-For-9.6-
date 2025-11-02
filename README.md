@@ -14,7 +14,7 @@ An expanded library for PvZ2 (9.6.1), based on Brekko's ExampleMod. I want it to
 * IntegerID backport! - Plant/Zombie types now support id mapping, which will help modders who dont want to constantly update the apk.
 * Arcade Pusher GI softcode
 * Mummy Memory from the original Example Mod
-* Stable softcode for Bull and Chair Racer, now it's shouldn't have any bug anymore for now. Also, now you can use the bull softcode for veteran bull too. Check the sample.json file to learn how to use them.
+* Stable softcode for Bull and Chair Racer, now it's shouldn't have any bug anymore for now. Also, now you can use the bull softcode for veteran bull too. Check the sample.json file in packages to learn how to use them.
 
 # Future Plans
 - Port my stuff to 64 bit once there are 64 bit template
