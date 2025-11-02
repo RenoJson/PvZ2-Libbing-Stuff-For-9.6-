@@ -34,4 +34,4 @@ Arcade's new property is `GridItemType` (string). One important note: DO NOT use
 
 # ZcorpRacer's (Chair Racer) new property:
 - RacerType (string)
-- NOTE: Beside the RacerType must use ZcorpRacerZombie class. If you want using any vanilla props of them, just not use them as the function will using the hardcode value instead.
+- NOTE: The RacerType must use ZcorpRacerZombie class. If you want using any vanilla props of them, just not use them as the function will using the hardcode value instead.
