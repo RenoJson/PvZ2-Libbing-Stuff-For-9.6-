@@ -199,6 +199,7 @@
     <ClCompile Include="PvZ2\Plant_PowerLily.cpp" />
     <ClCompile Include="PvZ2\StageModule.cpp" />
     <ClCompile Include="PvZ2\Zombie_Bull.cpp" />
+    <ClCompile Include="PvZ2\Zombie_BullVeteran.cpp" />
     <ClCompile Include="PvZ2\Zombie_Camel.cpp" />
     <ClCompile Include="PvZ2\Zombie_EightiesArcade.cpp" />
     <ClCompile Include="PvZ2\ZombieType.cpp" />
@@ -265,6 +266,7 @@
     <ClInclude Include="PvZ2\ZombieParticle.h" />
     <ClInclude Include="PvZ2\Zombie_Bull.h" />
     <ClInclude Include="PvZ2\ZombieConditions.h" />
+    <ClInclude Include="PvZ2\Zombie_BullVeteran.h" />
     <ClInclude Include="PvZ2\Zombie_Camel.h" />
     <ClInclude Include="PvZ2\Zombie_EightiesArcade.h" />
     <ClInclude Include="PvZ2\ZombiePropertySheet.h" />

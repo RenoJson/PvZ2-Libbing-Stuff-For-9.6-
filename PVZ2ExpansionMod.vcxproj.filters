@@ -17,6 +17,7 @@
     <ClCompile Include="PvZ2\Zombie_Bull.cpp" />
     <ClCompile Include="PvZ2\Chairracer.cpp" />
     <ClCompile Include="PvZ2\LevelModuleManager.cpp" />
+    <ClCompile Include="PvZ2\Zombie_BullVeteran.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PVZ2ExpansionMod.h" />
@@ -106,6 +107,7 @@
     <ClInclude Include="PvZ2\MessageRouter.h" />
     <ClInclude Include="PvZ2\Messages.h" />
     <ClInclude Include="PvZ2\PlantSpikeweed.h" />
+    <ClInclude Include="PvZ2\Zombie_BullVeteran.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

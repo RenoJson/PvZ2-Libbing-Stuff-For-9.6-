@@ -11,14 +11,16 @@
 class ZombieBullProps : public ZombiePropertySheet
 {
 public:
-	static void modInit();
-	static Reflection::CRefManualSymbolBuilder::BuildSymbolsFunc oZombieBullPropsBuildSymbols;
-	char pad[0x6];
+	Rect BuckRect = { -95, 10, 40, 125 };
+	float BullEnterSpeed = 0.30f;
+	float BullPawLocation = 810.0f;
+	float BullRunSpeed = 1.0f;
 	SexyString RiderType = "west_bullrider";
-	char tmp[0x6];
 	std::vector<SexyString> RiderLayerToHide;
-	char tmp1[0x6];
-	float LandOffsetX = 256.0f;
+	float LaunchDistance = 256.0f;
+
+	static Reflection::CRefManualSymbolBuilder::BuildSymbolsFunc oZombieBullPropsBuildSymbols;
+	static void modInit();
 
 	static void* construct()
 	{
@@ -37,9 +39,10 @@ public:
 		oZombieBullPropsBuildSymbols(builder, rclass);
 		REGISTER_STRING_PROPERTY(builder, rclass, ZombieBullProps, RiderType);
 		REGISTER_STRING_VECTOR_PROPERTY(builder, rclass, ZombieBullProps, RiderLayerToHide);
-		REGISTER_STANDARD_PROPERTY(builder, rclass, ZombieBullProps, LandOffsetX);
+		REGISTER_STANDARD_PROPERTY(builder, rclass, ZombieBullProps, LaunchDistance);
 	};
 };
+
 
 
 

@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /PvZ2/Bullrider.h
+/PvZ2/BoneProps.cpp
+/PvZ2/BoneProps.h

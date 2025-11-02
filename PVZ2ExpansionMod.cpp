@@ -20,6 +20,7 @@
 
 #include <PvZ2/Zombie_Bull.h>
 #include <PvZ2/Chairracer.h>
+#include <PvZ2/Zombie_BullVeteran.h>
 
 
 
@@ -236,12 +237,12 @@ void libPVZ2ExpansionMod_main()
     //FluffyHookFunction(0x72C56C, (void*)hkBoardDraw, (void**)&oBoardDraw);
     //FluffyHookFunction(0x949EFC, (void*)hkGetBoard, (void**)&oGetBoard);
 
-
-    PowerLilyProps::modInit();
     ZombieBullProps::modInit();
-    ZombieZcorpRacer::modInit();
-    //ZombieCamel::modInit();
+    ZombieBullVeteranProps::modInit();
+    ZombieZcorpRacerProps::modInit();
     ZombieEightiesArcadeProps::modInit();
+
+    //ZombieCamel::modInit();
 
     LOGI("Finished initializing");
 }
